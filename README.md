@@ -1,2 +1,5 @@
 # Edabit
-My solutions for Edabit Challanges www.edabit.com
+My solutions for Edabit C++ Challanges
+
+
+www.edabit.com
