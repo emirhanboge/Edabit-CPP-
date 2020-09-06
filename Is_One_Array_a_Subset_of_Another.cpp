@@ -1,18 +1,30 @@
 using namespace std;
 bool isSubset(std::vector<int> arr1, std::vector<int> arr2) {
-	int count {0};
-	vector<int> arr {};
 	sort(arr1.begin(), arr1.end());
 	sort(arr2.begin(), arr2.end());
-	for (int i {0}; i < arr2.size(); ++i) {
-		if (arr2[i] >= arr1[0]) {
-			arr.push_back(arr2[i]);
+	
+	vector<int> arr {};
+	
+	if (arr1.size() >= arr2.size())
+	{
+		for(auto ele:arr2)
+		{
+			for (int i {0}; i < arr1.size(); ++i)
+			{
+				if (ele == arr1[i])
+					arr.push_back(ele);
+			}
 		}
 	}
-	for (int i {0}; i < arr1.size(); ++i) {
-		if (arr1[i] == arr[i]) {
-			++count;
+	else
+	{
+		for(auto ele:arr1)
+		{
+			for (int i {0}; i < arr2.size(); ++i)
+			{
+				if (ele == arr2[i])
+					arr.push_back(ele);
+			}
 		}
 	}
-	return (count == arr1.size())? true:false;
 }
